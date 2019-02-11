@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+ <html lang="ko" >
+ <head>
+    <title>SK</title>
+ 		<meta charset="UTF-8">
+ 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+ 		<meta name="format-detection" content="telephone=no,address=no,email=no">
+ 		<!-- <meta name="viewport" content="width=1248"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=no">
+ 		<link rel="stylesheet" href="css/reset.css">
+ 		<link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/style.min.css">
+ 		<link rel="stylesheet" href="css/scrallani.css">
+
+ 		<script type="text/javascript" src="./js/jquery/jquery-3.3.1.min.js"></script>
+ 		<script src="http://code.jquery.com/jquery-3.3.1.js"></script>
+    <!--[if ie]>
+      <script src="js/ie/html5.min.js"></script>
+      <script src="js/ie/css3-mediaqueries.min.js"></script>
+    <![end if]-->
+    <script>
+      $( document ).ready( function() {
+        var jbOffset = $( '.jbMenu' ).offset();
+        $( window ).scroll( function() {
+          if ( $( document ).scrollTop() > jbOffset.top ) {
+            $( '.jbMenu' ).addClass( 'jbFixed' );
+          }
+          else {
+            $( '.jbMenu' ).removeClass( 'jbFixed' );
+          }
+        });
+      });
+      $(function(){
+
+          var link = $('#navbar a.dot');
+          link.on('click',function(e){
+
+              //href 속성을 통해, section id 타겟을 잡음
+              var target = $($(this).attr('href'));
+
+              //target section의 좌표를 통해 꼭대기로 이동
+              $('html, body').animate({
+                  scrollTop: target.offset().top/*-89 탑공간 생성*/
+              },650);
+
+              //active 클래스 부여
+              //$(this).addClass('active');
+
+              //앵커를 통해 이동할때, URL에 #id가 붙지 않도록 함.
+              e.preventDefault();
+          });
+
+          $(window).on('scroll',function(){
+              findPosition();
+          });
+
+          function findPosition(){
+              $('section').each(function(){
+                  if( ($(this).offset().top - $(window).scrollTop() ) < 1){
+                      link.removeClass('active');
+                      $('#navbar').find('[data-scroll="'+ $(this).attr('id') +'"]').addClass('active');
+                  }
+              });
+          }
+
+          findPosition();
+      });
+    </script>
+
+ </head>
+ <body id=top>
+   <div class="wrap">
+     <div class="header_wrap">
+       <ul class="header">
+         <li class="logo_wrap">
+           <img src="./images/top_logo.png">
+         </li>
+
+         <li>
+           <a href="">About True-Inno</a>
+         </li>
+         <li>
+           <a href="">Open Collabo.</a>
+         </li>
+         <li>
+           <a href="">&nbsp;</a>
+         </li>
+         <li>
+           <a href="">IoT Portal</a>
+         </li>
+
+         <li class="myMenu">
+           <a href=""><img src="./images/top_icon_mymenu.png"></a>
+           <a href=""><img src="./images/top_icon_search.png"></a>
+         </li>
+       </ul>
+     </div>
+     <nav class="nav_wrap jbMenu navbar jbFixed" id="navbar">
+       <ul class="nav-menu nav-menu" id="menu">
+         <li>
+            <a data-scroll="content01" href="#content01" class="dot active"></a>
+         </li>
+         <li>
+            <a data-scroll="content02" href="#content02" class="dot"></a>
+         </li>
+         <li>
+            <a data-scroll="content03" href="#content03" class="dot"></a>
+         </li>
+         <li>
+            <a data-scroll="content04" href="#content04" class="dot"></a>
+         </li>
+         <li>
+            <a data-scroll="content05" href="#content05" class="dot"></a>
+         </li>
+         <li>
+            <a data-scroll="content06" href="#content06" class="dot"></a>
+         </li>
+         <li>
+            <a data-scroll="content07" href="#content07" class="dot"></a>
+         </li>
+         <li>
+            <a data-scroll="content08" href="#content08" class="dot"></a>
+         </li>
+         <li>
+            <a data-scroll="content09" href="#content09" class="dot"></a>
+         </li>
+         <li>
+            <a data-scroll="content10" href="#content10" class="dot"></a>
+         </li>
+       </ul>
+     </nav>
+
+     <section class=" content01"  id="content01">
+       <video autoplay loop poster = "">
+         <source src = "images/banner_bg.mp4" type = "video/mp4">
+       </video>
+       <div class="banner_wrap">
+        <h1>
+          당신의 미래<br/>
+          새로운 도전<br/>
+          True Innovation<br/>
+          <span>Build Trust in Collaborative innovation </span>
+        </h1>
+       </div>
+     </section>
+     <section class=" content02"  id="content02">
+       <h2 data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+         유망한 인재 성장과  ICT 기술 혁신을 위한<br/>
+         <span>True Innovation</span>
+       </h2>
+       <div>
+
+
+         <ul class="innovation_contents">
+           <li data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+            <div class="icon_wrap_cube">
+            </div>
+            <div class="icon_wrap">
+              <img src="./images/innovation_icon01.png">
+            </div>
+            <div class="sub_title">
+              PROJECT
+            </div>
+            <p>
+              세상을 함께 바꾸어 나아갈<br/>
+              여러분의 참신한 아이디어 및<br/>
+              다양한 서비스 제안을 기다립니다
+            </p>
+            <button class="btn_ReadMore">
+              Read more
+            </button>
+           </li>
+           <li data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+            <div class="icon_wrap_cube">
+            </div>
+            <div class="icon_wrap">
+              <img src="./images/innovation_icon02.png">
+            </div>
+            <div class="sub_title">
+              HOUSE
+            </div>
+            <p>
+              프로젝트에 참여하는 조직과<br/>
+              기타 외부 스타트업 이용을 위한<br/>
+              물리적 공간과 장비를 제공합니다
+            </p>
+            <button class="btn_ReadMore">
+              Read more
+            </button>
+           </li>
+           <li data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+            <div class="icon_wrap_cube">
+            </div>
+            <div class="icon_wrap">
+              <img src="./images/innovation_icon03.png">
+            </div>
+            <div class="sub_title">
+              NETWORK
+            </div>
+            <p>
+              풍부한 경험과 지혜를 겸비한 멘토와<br/>
+              당신의 사업을 함께할<br/>
+              파트너가 기다리고 있습니다
+            </p>
+            <button class="btn_ReadMore">
+              Read more
+            </button>
+           </li>
+           <li data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+            <div class="icon_wrap_cube">
+            </div>
+            <div class="icon_wrap">
+              <img src="./images/innovation_icon04.png">
+            </div>
+            <div class="sub_title">
+              INVESTMENT
+            </div>
+            <p>
+              당신의 꿈과 미래를 도와줄<br/>
+              투자 및 금융 · 경영 지원에 대해<br/>
+              안내해 드립니다
+            </p>
+            <button class="btn_ReadMore">
+              Read more
+            </button>
+           </li>
+         </ul>
+       </div>
+       <div class="btn_top">
+         <a href="#top">
+           <img src="./images/btn_top.png" alt="">
+         </a>
+       </div>
+     </section>
+
+     <section class=" content03"  id="content03">
+       <h2  class="contents_title" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+         <span>Project</span><br/>
+         SK텔레콤과 함께 여러분의 아이디어를 실현해보세요<br/>
+         <img src="./images/title_bar.png" alt="">
+       </h2>
+      <div class="project_contents_wrap">
+       <div class="project_contents" data-scroll="toggle(.scaleUpIn, .scaleUpOut)">
+         <div class="date_top">
+           <span>Service</span>
+         </div>
+					<div class="position_relative img-scale">
+						<figure class="picher_doc">
+							<img src="./images/project_Thumb01.png" alt="">
+							<div class="opacity-medium"></div>
+              <div class="inner_text">
+                <h3 class="show_tital">모바일 헬스 케어 서비스</h3>
+
+                <p class="display_block">
+                  헬스 케어 서비스에 대한<br/>
+                  여러분의 아이디어를 모집합니다.
+                </p>
+                <button class="btn btn-text" type="button" name="button">
+                  제안하기
+                </button>
+              </div>
+
+						</figure>
+					</div>
+				</div>
+
+        <div class="project_contents" data-scroll="toggle(.scaleUpIn, .scaleUpOut)">
+          <div class="date_top">
+            <span>Solution</span>
+          </div>
+ 					<div class="position_relative img-scale max_size">
+ 						<figure class="picher_doc">
+ 							<img src="./images/project_Thumb02.png" alt="">
+ 							<div class="opacity-medium bg-extra-black"></div>
+
+ 							<div class="inner_text">
+ 								<h3 class="show_tital">Inclusion Plus</h3>
+
+ 								<p class="display_block">
+ 									사회혁신을 위한 금융·경제<br/>
+                  솔루션 경진대회
+ 								</p>
+ 								<button class="btn btn-text" type="button" name="button">
+ 									제안하기
+ 								</button>
+ 							</div>
+ 						</figure>
+ 					</div>
+ 				</div>
+
+        <div class="project_contents" data-scroll="toggle(.scaleUpIn, .scaleUpOut)">
+          <div class="date_top">
+            <span>Solution</span>
+          </div>
+ 					<div class="position_relative img-scale max_size">
+ 						<figure class="picher_doc">
+ 							<img src="./images/project_Thumb03.png" alt="">
+ 							<div class="opacity-medium bg-extra-black"></div>
+
+ 							<div class="inner_text">
+ 								<h3 class="show_tital">관광 스타트업 협력 프로젝트</h3>
+
+ 								<p class="display_block">
+ 									즐겁고 편안한 관광을 위해<br/>
+                  협업할 스타트업을 구합니다.
+ 								</p>
+ 								<button class="btn btn-text" type="button" name="button">
+ 									제안하기
+ 								</button>
+ 							</div>
+ 						</figure>
+ 					</div>
+ 				</div>
+      </div>
+      <div class="btn_top">
+        <a href="#top">
+          <img src="./images/btn_top.png" alt="">
+        </a>
+      </div>
+     </section>
+     <section class=" content04"  id="content04">
+       <div class="investment">
+         <h1  data-scroll="toggle(.fromLeftIn, .fromLeftOut)">
+           <span>Investment</span><br/>
+           <p  data-scroll="toggle(.fromLeftIn, .fromLeftOut)">동반성장을 위한 경영 지원 프로그램과<br/>
+             투자 기준을 안내합니다.
+           </p>
+         </h1>
+         <ul class="investment_btn"  data-scroll="toggle(.fromLeftIn, .fromLeftOut)">
+           <li>
+             경영지원 컨설팅
+           </li>
+           <li>
+             동방성장펀드
+           </li>
+           <li>
+             스타트업 벤처 캐피털
+           </li>
+         </ul>
+
+       </div>
+       <div class="btn_top">
+         <a href="#top">
+           <img src="./images/btn_top.png" alt="">
+         </a>
+       </div>
+     </section>
+
+     <section class=" content05"  id="content05">
+       <h2  class="contents_title" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+         <span>Technology</span><br/>
+         기술 연구를 위한 공유 API와 솔루션을 제공합니다<br/>
+         <img src="./images/title_bar.png" alt="">
+       </h2>
+       <div class="wrap">
+         <div class="wpb_column vc_column_container vc_col-sm-6 vc_col-md-3">
+           <div class="wpb_wrapper" style="text-align:center;" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+             <span class="q_icon_shade q_icon_shortcode simple_line_icons circle pull-center animation_border_out ">
+               <img  src="./images/Technology_icon01.png" class="qode_icon_simple_line_icon icon-layers" style="padding-left: 1.5px;">
+               <span class="animation_overlay"></span>
+             </span>
+            <div class="Technology_contents_text">
+        			<h5 class="icon_title ">ZonePOI</h5>
+              <p>
+                고객 위치정보에 인지 가능한<br/>
+                건물, 상점, 시설물 등의 정보를<br/>
+                함께 제공하는 API 서비스
+              </p>
+          	</div>
+          </div>
+            <div class="wpb_wrapper" style="text-align:center;" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+              <span class="q_icon_shade q_icon_shortcode simple_line_icons circle pull-center animation_border_out ">
+                <img  src="./images/Technology_icon02.png" class="qode_icon_simple_line_icon icon-layers">
+                <span class="animation_overlay"></span>
+              </span>
+             <div class="Technology_contents_text">
+         			<h5 class="icon_title ">IOT</h5>
+               <p>
+                 IoT 고객이 원하는 모든 서비스를<br/>
+                 제공하기 위해 서비스 유형에 따른<br/>
+                 최적 네트워크 제공
+               </p>
+           	</div>
+           </div>
+            <div class="wpb_wrapper" style="text-align:center;" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+              <span class="q_icon_shade q_icon_shortcode simple_line_icons circle pull-center animation_border_out ">
+                <img  src="./images/Technology_icon03.png" class="qode_icon_simple_line_icon icon-layers">
+                <span class="animation_overlay"></span>
+              </span>
+             <div class="Technology_contents_text">
+         			<h5 class="icon_title ">Weather</h5>
+               <p>
+                 일상의 수식어를 기반으로 날씨 정보를<br/>
+                 감성적 정보로 변환해 사용자에게<br/>
+                 전달할 수 있는 API 서비스
+               </p>
+           	</div>
+           </div>
+            <div class="wpb_wrapper" style="text-align:center;" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+              <span class="q_icon_shade q_icon_shortcode simple_line_icons circle pull-center animation_border_out ">
+                <img  src="./images/Technology_icon04.png" class="qode_icon_simple_line_icon icon-layers">
+                <span class="animation_overlay"></span>
+              </span>
+             <div class="Technology_contents_text">
+         			<h5 class="icon_title ">BaaS</h5>
+               <p>
+                 App개발에 필요한 Backend의<br/>
+                 특정 기능들을 복잡한 서버 개발 없이<br/>
+                 기능구현 가능한 API 서비스
+               </p>
+           	</div>
+           </div>
+       </div>
+
+       <div class="wpb_column vc_column_container vc_col-sm-6 vc_col-md-3">
+         <div class="wpb_wrapper" style="text-align:center;" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+           <span class="q_icon_shade q_icon_shortcode simple_line_icons circle pull-center animation_border_out ">
+             <img  src="./images/Technology_icon05.png" class="qode_icon_simple_line_icon icon-layers">
+             <span class="animation_overlay"></span>
+           </span>
+          <div class="Technology_contents_text">
+            <h5 class="icon_title ">T map API</h5>
+            <p>
+              지도, 경로안내, 교통정보, POI 등<br/>
+              다양한 API를 B2B/B2C 사업용으로<br/>
+              제공
+            </p>
+          </div>
+        </div>
+          <div class="wpb_wrapper" style="text-align:center;" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+            <span class="q_icon_shade q_icon_shortcode simple_line_icons circle pull-center animation_border_out ">
+              <img  src="./images/Technology_icon06.png" class="qode_icon_simple_line_icon icon-layers">
+              <span class="animation_overlay"></span>
+            </span>
+           <div class="Technology_contents_text">
+            <h5 class="icon_title ">Biz smart push</h5>
+             <p>
+               하나의 표준 프로토콜을 이용하여<br/>
+               개별 연동작업이 필요없는<br/>
+               Push 기능을 제공하는 API 서비스
+             </p>
+          </div>
+         </div>
+          <div class="wpb_wrapper" style="text-align:center;" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+            <span class="q_icon_shade q_icon_shortcode simple_line_icons circle pull-center animation_border_out ">
+              <img  src="./images/Technology_icon07.png" class="qode_icon_simple_line_icon icon-layers">
+              <span class="animation_overlay"></span>
+            </span>
+           <div class="Technology_contents_text">
+            <h5 class="icon_title ">Smart RTC</h5>
+             <p>
+               고가의 서버 구축 및 번거로운<br/>
+               플로그인 없이,<br/>
+               음성, 영상, 데이터 통신 기능
+             </p>
+          </div>
+         </div>
+          <div class="wpb_wrapper" style="text-align:center;" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+            <span class="q_icon_shade q_icon_shortcode simple_line_icons circle pull-center animation_border_out ">
+              <img  src="./images/Technology_icon08.png" class="qode_icon_simple_line_icon icon-layers">
+              <span class="animation_overlay"></span>
+            </span>
+           <div class="Technology_contents_text">
+            <h5 class="icon_title ">Event day</h5>
+             <p>
+               공휴일 뿐만 아니라<br/>
+               국가적, 문화적 기념일 등의 정보를<br/>
+               확인하고 활용할 수 있는 API 서비스
+             </p>
+          </div>
+         </div>
+     </div>
+       <div class="btn_top">
+         <a href="#top">
+           <img src="./images/btn_top.png" alt="">
+         </a>
+       </div>
+     </section>
+     <section class=" content06"  id="content06">
+       <h2  class="contents_title" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+         <span>Education & Training  </span><br/>
+         개인과 조직의 역량 발전을 위한 교육 프로그램을 제공합니다<br/>
+         <img src="./images/title_bar.png" alt="">
+       </h2>
+        <div class="Education_contents_wrap">
+         <div class="Education_contents position_relative" data-scroll="toggle(.fromLeftIn, .fromLeftOut)">
+						<img src="./images/Education_Thumb01.png" alt="">
+            <div class="day_info">
+              2018. 07.19 ~ 12.31<span>|</span>정원 30명
+            </div>
+						<div class="Education_inner_text">
+							<h3 class="">Python을 활용한 웹 크롤러 만들기 </h3>
+
+							<p class="">
+								Python 라이브러리 사용법에 대해 이해하고<br/>
+                사이트 특성에 맞는 웹 크롤러를 만들어 봅니다<br/>
+							</p>
+              <button class="btn_ReadMore">
+                Read more
+              </button>
+  					</div>
+  				</div>
+          <div class="Education_contents position_relative" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+ 						<img src="./images/Education_Thumb02.png" alt="">
+             <div class="day_info">
+               2018. 07.19 ~ 12.31<span>|</span>정원 30명
+             </div>
+ 						<div class="Education_inner_text">
+ 							<h3 class="">Git과 Gitthub로 내 커리어 만들기</h3>
+
+ 							<p class="">
+ 								GitHub 프로필과 프로젝트 리퍼지토리 작성법과<br/>
+                GitHub 풀리퀘스트를 실습합니다<br/>
+ 							</p>
+              <button class="btn_ReadMore">
+                Read more
+              </button>
+   					</div>
+   				</div>
+          <div class="Education_contents position_relative"  data-scroll="toggle(.fromRightIn, .fromRightOut)">
+ 						<img src="./images/Education_Thumb03.png" alt="">
+             <div class="day_info">
+               2018. 07.19 ~ 12.31<span>|</span>정원 30명
+             </div>
+ 						<div class="Education_inner_text">
+ 							<h3 class="">D3.js를 활용한 빅데이터 시각화</h3>
+
+ 							<p class="">
+ 								빅데이터 처리와 데이터 시각화가<br/>
+                결합하여 빅데이터 시각화가 완성되는 과정을 배웁니다<br/>
+ 							</p>
+              <button class="btn_ReadMore">
+                Read more
+              </button>
+   					</div>
+   				</div>
+        </div>
+        <div class="btn_top">
+          <a href="#top">
+            <img src="./images/btn_top.png" alt="">
+          </a>
+        </div>
+     </section>
+     <section class=" content07"  id="content07">
+       <h2  class="contents_title" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+         <span>Open Collabo. House</span><br/>
+         내일을 준비하는 공간을 여러분과 공유합니다<br/>
+         <img src="./images/title_bar.png" alt="">
+       </h2>
+      <div class="house_contents_wrap">
+       <div class="house_contents" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+         <h3 class="house_title">Project Room </h3>
+					<div class="bg-extra-black_title">
+            <div class="inner_text">
+  						<button class="btn btn-text" type="button" name="button">
+  							예약하기
+  						</button>
+  					</div>
+          </div>
+				</div>
+        <div class="house_contents" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+          <h3 class="house_title">Test Device · Meter</h3>
+ 					<div class="bg-extra-black_title">
+             <div class="inner_text">
+   						<button class="btn btn-text" type="button" name="button">
+   							예약하기
+   						</button>
+   					</div>
+           </div>
+ 				</div>
+        <div class="house_contents" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+          <h3 class="house_title">Meeting Room</h3>
+ 					<div class="bg-extra-black_title">
+             <div class="inner_text">
+   						<button class="btn btn-text" type="button" name="button">
+   							예약하기
+   						</button>
+   					</div>
+           </div>
+ 				</div>
+      </div>
+
+      <div class="house_contents_wrap">
+       <div class="house_contents" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+         <h3 class="house_title">Project Room </h3>
+					<div class="bg-extra-black_title">
+            <div class="inner_text">
+  						<button class="btn btn-text" type="button" name="button">
+  							예약하기
+  						</button>
+  					</div>
+          </div>
+				</div>
+        <div class="house_contents" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+          <h3 class="house_title">R&D Room</h3>
+ 					<div class="bg-extra-black_title">
+             <div class="inner_text">
+   						<button class="btn btn-text" type="button" name="button">
+   							예약하기
+   						</button>
+   					</div>
+           </div>
+ 				</div>
+        <div class="house_contents" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+          <h3 class="house_title">Seminar Room</h3>
+ 					<div class="bg-extra-black_title">
+             <div class="inner_text">
+   						<button class="btn btn-text" type="button" name="button">
+   							예약하기
+   						</button>
+   					</div>
+           </div>
+ 				</div>
+      </div>
+
+      <div class="btn_top">
+        <a href="#top">
+          <img src="./images/btn_top.png" alt="">
+        </a>
+      </div>
+     </section>
+     <section class=" content08"  id="content08">
+       <h2  class="contents_title" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+         <span>Network</span><br/>
+         당신과 함께한 분야별 파트너와 멘토를 소개합니다<br/>
+         <img src="./images/title_bar.png" alt="">
+       </h2>
+       <div class="Network_contents_wrap">
+        <div class="Network_contents" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+          <img src="./images/Network_Thumb01.png" alt="">
+          <div class="Network_contents_info">
+            <div class="title_wrap">
+              <h3>이경택 대표</h3>
+              <div class="logo_wrap">
+                <img src="./images/Network_Thumb01_logo.png" alt="">사업전략
+              </div>
+            </div>
+            <p>
+              당신의 사업 전반에 관한<br/>
+              전략 가이드를 도와드립니다.<br/>
+            </p>
+            <button class="btn_ReadMore">
+              Read more
+            </button>
+          </div>
+        </div>
+        <div class="Network_contents" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+          <img src="./images/Network_Thumb02.png" alt="">
+          <div class="Network_contents_info">
+            <div class="title_wrap">
+              <h3>정호석 변호사</h3>
+              <div class="logo_wrap">
+                <img src="./images/Network_Thumb02_logo.png" alt="">투자법무
+              </div>
+            </div>
+            <p>
+              당신의 사업 전반에 관한<br/>
+              전략 가이드를 도와드립니다.<br/>
+            </p>
+            <button class="btn_ReadMore">
+              Read more
+            </button>
+          </div>
+        </div>
+        <div class="Network_contents" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+          <img src="./images/Network_Thumb03.png" alt="">
+          <div class="Network_contents_info">
+            <div class="title_wrap">
+              <h3>김선영 한국 지사장</h3>
+              <div class="logo_wrap">
+                <img src="./images/Network_Thumb03_logo.png" alt="">데이터리셔스
+              </div>
+            </div>
+            <p>
+              당신의 사업 전반에 관한<br/>
+              전략 가이드를 도와드립니다.<br/>
+            </p>
+            <button class="btn_ReadMore">
+              Read more
+            </button>
+          </div>
+        </div>
+        <div class="Network_contents" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+          <img src="./images/Network_Thumb04.png" alt="">
+          <div class="Network_contents_info">
+            <div class="title_wrap">
+              <h3>명승은 공동대표</h3>
+              <div class="logo_wrap">
+                <img src="./images/Network_Thumb04_logo.png" alt="">벤처스퀘어
+              </div>
+            </div>
+            <p>
+              당신의 사업 전반에 관한<br/>
+              전략 가이드를 도와드립니다.<br/>
+            </p>
+            <button class="btn_ReadMore">
+              Read more
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="btn_top">
+        <a href="#top">
+          <img src="./images/btn_top.png" alt="">
+        </a>
+      </div>
+     </section>
+     <section class=" content09"  id="content09">
+      <h2  class="contents_title" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+       <span>Event & News</span><br/>
+       현재 진행중인 이벤트와 새로운 협업 소식을 알려드립니다<br/>
+       <img src="./images/title_bar.png" alt="">
+      </h2>
+      <div class="Education_contents_wrap">
+       <div class="Education_contents position_relative"  data-scroll="toggle(.fromLeftIn, .fromLeftOut)">
+          <img src="./images/Event_Thumb01.png" alt="">
+          <div class="Education_inner_text">
+            <h3 class="event_day">2018.02.24 </h3>
+
+            <p class="event_title">
+              [뉴스레터] True Innovation, 4월의 두 번째 소식
+            </p>
+            <button class="btn_ReadMore">
+              Read more
+            </button>
+          </div>
+        </div>
+
+        <div class="Education_contents position_relative" data-scroll="toggle(.fromBottomIn, .fromBottomOut)">
+           <img src="./images/Event_Thumb02.png" alt="">
+           <div class="Education_inner_text">
+             <h3 class="event_day">2018.02.24 </h3>
+
+             <p class="event_title">
+               [NEWS] 중소벤처기업부 - 스마틴 앱  챌린지 2018 개최
+             </p>
+             <button class="btn_ReadMore">
+               Read more
+             </button>
+           </div>
+         </div>
+
+         <div class="Education_contents position_relative" data-scroll="toggle(.fromRightIn, .fromRightOut)">
+            <img src="./images/Event_Thumb03.png" alt="">
+            <div class="Education_inner_text">
+              <h3 class="event_day">2018.02.24 </h3>
+
+              <p class="event_title">
+                SK텔레콤 청년비상 4기, 9개 팀을 소개 합니다
+              </p>
+              <button class="btn_ReadMore">
+                Read more
+              </button>
+            </div>
+          </div>
+      </div>
+
+      <div class="btn_top">
+        <a href="#top">
+          <img src="./images/btn_top.png" alt="">
+        </a>
+      </div>
+     </section>
+     <section class=" content10"  id="content10">
+       <div class="site_map_wrap">
+         <div class="site_map">
+           <h2>Open Collabo.<hr/></h2>
+           <ul>
+            <li><a href="">Program</a></li>
+            <li><a href="">Collabo. 프로젝트</a></li>
+            <li><a href="">사업 · 기술제안</a></li>
+            <li><a href="">특허 · 유망기술 공유</a></li>
+            <li><a href="">투자 · 지원</a></li>
+           </ul>
+
+           <ul>
+            <li><a href="">Collabo. House</a></li>
+            <li><a href="">Open Collabo. House </a></li>
+            <li><a href="">테스트 장비 예약 </a></li>
+            <li><a href="">공간 예약 </a></li>
+            <li><a href="">교육 신청</a></li>
+            <li><a href="">상품 전시</a></li>
+           </ul>
+
+           <ul>
+            <li><a href="">Network</a></li>
+            <li><a href="">Open Partner Map</a></li>
+            <li><a href="">Collabo. Supporter</a></li>
+            <li><a href="">Open Network</a></li>
+            <li><a href="">홍보 · 구인 · 구직</a></li>
+           </ul>
+
+           <ul>
+            <li><a href="">Event</a></li>
+            <li><a href="">Event Calendar</a></li>
+            <li><a href="">Demo Day</a></li>
+            <li><a href="">개발자포럼</a></li>
+            <li><a href="">헤커톤</a></li>
+            <li><a href="">세미나</a></li>
+            <li><a href="">공모전</a></li>
+           </ul>
+
+           <ul>
+            <li><a href="">About</a></li>
+            <li><a href="">Open Collabo. Project</a></li>
+            <li><a href="">이전 프로그램</a></li>
+           </ul>
+
+         </div>
+         <div class="site_map">
+           <h2>T developers<hr/></h2>
+           <ul>
+            <li><a href="">Technology</a></li>
+            <li><a href="">All</a></li>
+            <li><a href="">IoT</a></li>
+            <li><a href="">Network</a></li>
+            <li><a href="">AI/Big Data</a></li>
+            <li><a href="">Security</a></li>
+            <li><a href="">Media</a></li>
+            <li><a href="">ICT Infra</a></li>
+           </ul>
+
+           <ul>
+            <li><a href="">IAPI</a></li>
+            <!-- <li><a href="">Open Collabo. House </a></li>
+            <li><a href="">테스트 장비 예약 </a></li>
+            <li><a href="">공간 예약 </a></li>
+            <li><a href="">교육 신청</a></li>
+            <li><a href="">상품 전시</a></li> -->
+           </ul>
+
+           <ul>
+            <li><a href="">Resources</a></li>
+            <li><a href="">SDK & Tools</a></li>
+            <li><a href="">APIs</a></li>
+            <li><a href="">개발가이드</a></li>
+            <li><a href="">기술문서</a></li>
+            <li><a href="">동영상</a></li>
+            <li><a href="">OSS 라이선스 준수</a></li>
+           </ul>
+
+           <ul>
+            <li><a href="">Community</a></li>
+            <li><a href="">Community</a></li>
+            <li><a href="">SKT 블로그</a></li>
+            <li><a href="">SKP 블로그</a></li>
+           </ul>
+
+           <ul>
+            <li><a href="">News</a></li>
+            <li><a href="">홍보</a></li>
+            <li><a href="">Partners</a></li>
+            <li><a href="">ICT리포트</a></li>
+            <li><a href="">공지사항</a></li>
+           </ul>
+
+         </div>
+         <div class="site_map">
+           <h2>IOT Portal<hr/></h2>
+           <ul>
+            <li><a href="">SKT loT 소개</a></li>
+            <li><a href="">SK Telecom IoT 소개</a></li>
+            <li><a href="">SKT IoT Solutions</a></li>
+            <li><a href="">IoT Network</a></li>
+            <li><a href="">Module</a></li>
+            <li><a href="">ThingPlug</a></li>
+           </ul>
+
+           <ul>
+            <li><a href="">Support</a></li>
+            <li><a href="">무상 모듈 신청</a></li>
+            <li><a href="">Open House</a></li>
+            <li><a href="">인증</a></li>
+           </ul>
+
+           <ul>
+            <li><a href="">Developers</a></li>
+            <li><a href="">개발 Guide</a></li>
+           </ul>
+
+           <ul>
+            <li><a href="">Cummunity</a></li>
+            <li><a href="">공지사항</a></li>
+            <li><a href="">이벤트</a></li>
+            <li><a href="">개발자 커뮤니티</a></li>
+            <li><a href="">FAQ</a></li>
+           </ul>
+
+           <ul>
+            <li>&nbsp;</li>
+            <li><a href="">&nbsp;</a></li>
+           </ul>
+
+         </div>
+       </div>
+       <div class="btn_top">
+         <a href="#top">
+           <img src="./images/btn_top.png" alt="">
+         </a>
+       </div>
+     </section>
+     <section class="footer_wrap">
+       <div class="footer">
+         <ul>
+           <li><a href="">About True Innovation</a><span>|</span></li>
+           <li><a href="">이용약관</a><span>|</span></li>
+           <li><a href="">개인정보처리방침</a></li>
+         </ul>
+         <div class="foot_info">
+           사업자등록번호 104-81-37225&nbsp;&nbsp;&nbsp;&nbsp;서울특별시 중구 을지로65&nbsp;&nbsp;&nbsp;&nbsp;대표이사/사장 : 박정호
+           <div class="select_wrap">
+             <select class="select_month">
+               <option>Family Site</option>
+               <option>Family Site 1</option>
+               <option>Family Site 2</option>
+             </select>
+           </div><br/>
+           <span>COPYRIGHT © SK TELECOM CO., LTD. ALL RIGHTS RESERVED. </span>
+         </div>
+       </div>
+     </section>
+   </div>
+
+   <script src="./js/ScrollTrigger.min.js"></script>
+   <script>
+   window.counter = function() {
+   	// this refers to the html element with the data-scroll-showCallback tag
+   	var span = this.querySelector('span');
+   	var current = parseInt(span.textContent);
+
+   	span.textContent = current + 1;
+   };
+
+   document.addEventListener('DOMContentLoaded', function(){
+     var trigger = new ScrollTrigger({
+   	  addHeight: true
+     });
+   });
+   </script>
+ </body>
+ </html>
